@@ -1,6 +1,6 @@
 angular.module('zenit', []).controller('MyController',
 		[ '$scope', function($scope) {
-//			$scope.greetMe = 'World';
+			$scope.username = 'World';
 		} ]);
 
 angular.element(document).ready(function() {
