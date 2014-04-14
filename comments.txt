@@ -1,0 +1,7 @@
+initialiser le projet github
+clone en local
+
+
+listener dans le web.xml permet d'initialiser le contexte de spring 
+
+ajouter dependance javax servlet
