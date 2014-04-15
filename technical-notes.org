@@ -1,0 +1,7 @@
+* Technical notes
+Notes about the technical choices, how it works (convention, configurations).
+** TODO Maven
+** TODO Spring
+** TODO Spring-mvc
+** TODO JPA
+** TODO Angular
