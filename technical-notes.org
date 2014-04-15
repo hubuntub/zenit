@@ -1,6 +1,26 @@
 * Technical notes
 Notes about the technical choices, how it works (convention, configurations).
-** TODO Maven
+** Maven
+*** TODO Conventions
+**** DONE Sources
+     - src/main/java        ← Java source (classpath)
+     - src/main/resources   ← Resources (classpath)
+     - src/main/webapp      ← Webapp resource (classpath, root of the war)
+     - src/test/java        ← Test java source (test classpath)
+     - src/test/resoeurces   ← Test resources (test classpath)
+*** TODO Plugin used
+**** DONE maven-surefire-plugin
+     Configure test to be run in parallel.
+**** DONE maven-source-plugin
+**** DONE maven-javadoc-plugin
+**** TODO cobertura-maven-plugin
+     Code coverage reporting.
+**** TODO com.github.github:site-maven-plugin
+**** TODO maven-release-plugin
+*** TODO Misc. stuff
+**** TODO developers
+**** TODO licence
+**** TODO scm information
 ** TODO Spring
 ** TODO Spring-mvc
 ** TODO JPA
