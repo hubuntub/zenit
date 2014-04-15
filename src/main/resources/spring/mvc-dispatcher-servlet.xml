@@ -10,9 +10,9 @@
         http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
 
 	<context:component-scan base-package="com.github.hubuntub.zenit" />
- <context:property-placeholder location="classpath:jdbc.properties" />
-     
-    <import resource="persistenceContext.xml" />
+	<context:property-placeholder location="classpath:jdbc.properties" />
+
+	<import resource="classpath:spring/persistenceContext.xml" />
 	<mvc:annotation-driven />
 	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
