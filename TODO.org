@@ -1,0 +1,22 @@
+This is a todo file.
+
+* TODO Create an api entrypoint
+  Spring-mvc @Controller for listing users
+* TODO Validate the "create" behavior of Hibernate
+* TODO API(s) Rest (C.R.U.D.)
+** TODO User
+** TODO StepByHour
+* TODO Create corresponding test
+** TODO Model(s)
+   If domain method or equals/hashcode implemented.
+** TODO DAO(s)
+** TODO Service(s)
+** TODO Controller(s)
+* TODO Fitbit webservice client
+** TODO Howto
+   Get the API key, protocol, ..
+** TODO Client API
+* TODO Scheduling
+  For each API/user/.. have scheduled task that runs
+  during the execution of the webapp.
+  Using Spring @Schedule & others annotations
