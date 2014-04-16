@@ -10,7 +10,8 @@ import com.github.hubuntub.zenit.model.User;
 public class UserRepository extends AbstractRepository<User> {
 
 	
-	private static final String QUERY_GET_USER = "SELECT u FROM USER u ORDER BY u.username";
+	// private static final String QUERY_GET_USER = "SELECT u FROM USER u ORDER BY u.username";
+	private static final String QUERY_GET_USER = "from User";
 
 	public List<User> getAll(){
 		return entityManager.createQuery(QUERY_GET_USER).getResultList();

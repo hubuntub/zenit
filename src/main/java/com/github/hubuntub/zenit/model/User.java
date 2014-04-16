@@ -2,12 +2,17 @@ package com.github.hubuntub.zenit.model;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+
 
 
 
@@ -15,14 +20,14 @@ import javax.persistence.OneToMany;
 public class User implements Serializable {
 
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long userId;
 	private String username;
 	private String lastname;
 	private Date dateOfBirth;
 	
-	@OneToMany
-	private Set<StepPerHour> stepPerHours;
+	@OneToMany(fetch=FetchType.EAGER, mappedBy = "userId", cascade=CascadeType.ALL)
+	private Set<StepPerHour> stepPerHours = new HashSet<>();
 	public String getUsername() {
 		return username;
 	}

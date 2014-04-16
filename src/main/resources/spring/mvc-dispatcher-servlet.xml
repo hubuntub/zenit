@@ -14,16 +14,7 @@
 
 	<import resource="classpath:spring/persistenceContext.xml" />
 	<mvc:annotation-driven />
-	<bean
-		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-		<property name="prefix">
-			<value>/WEB-INF/pages/</value>
-		</property>
-		<property name="suffix">
-			<value>.jsp</value>
-		</property>
-	</bean>
-
+	<context:annotation-config/>
 
 	<!-- Map returned view name "rssViewer" to bean id "rssViewer" <bean class="org.springframework.web.servlet.view.BeanNameViewResolver" 
 		/> <bean id="xmlViewer" class="org.springframework.web.servlet.view.xml.MarshallingView"> 
