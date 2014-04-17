@@ -7,20 +7,9 @@ zenitApp.controller('mainController', function($scope) {
 	$scope.message = 'Welcome to Zenit';
 	console.log("mainController");
 });
-zenitApp.controller('userController', function($scope) {
+zenitApp.controller('userController', function($scope, User) {
 	$scope.name = "Users";
-	$scope.users = [
-		{
-			username: 'Houbeb',
-			lastname: 'benothmene',
-			dateOfBirth: '26/08/86'
-		}, 
-		{
-			username: 'Nature',
-			lastname: 'Demeester',
-			dateOfBirth: '27/07/84'
-		}
-	]
+	$scope.users = User.query();
 });
 // Routes are used with ng-view (maybe we can name it, etc.. but I don't know
 // Each provider [.when(..)] define an "anchor uri"
