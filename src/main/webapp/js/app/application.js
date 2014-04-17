@@ -29,5 +29,5 @@ function UserController($scope, User) {
 	$scope.message = "users";
 }
 angular.element(document).ready(function() {
-	angular.bootstrap(document, [ 'zenit' ]);
+	angular.bootstrap(document, [ 'zenitApp' ]);
 });
