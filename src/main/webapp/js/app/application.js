@@ -1,33 +1,54 @@
 'use strict';
 
-var zenitApp = angular.module('zenitApp', [ ngRoute ]);
+var zenitApp = angular.module('zenitApp', [ 'ngRoute' ]);
+// ngRoute is not defined, I don't know where it comes from
+// var zenitApp = angular.module('zenitApp', [ ngRoute ]);
 zenitApp.controller('mainController', function($scope) {
 	$scope.message = 'Welcome to Zenit';
 	console.log("mainController");
 });
 zenitApp.controller('userController', function($scope) {
-	$scope.users = [{
-		User :{
+	$scope.name = "Users";
+	$scope.users = [
+		{
 			username: 'Houbeb',
 			lastname: 'benothmene',
-			dateOfBirth: 26/08/86 
+			dateOfBirth: '26/08/86'
 		}, 
-		User :{
+		{
 			username: 'Nature',
 			lastname: 'Demeester',
-			dateOfBirth: 27/07/84 
+			dateOfBirth: '27/07/84'
 		}
-	}]
+	]
 });
+// Routes are used with ng-view (maybe we can name it, etc.. but I don't know
+// Each provider [.when(..)] define an "anchor uri"
+// i.e. '/users' will be in the location bar /#/users
+// It is not related to the api or anything
 zenitApp.config([ '$routeProvider', function($routeProvider) {
-	$routeProvider.when('/users', {
-		templateUrl : 'views/users.html',
-		controller : UserController
+	$routeProvider.when('/test', {
+		templateUrl : 'views/test.html',
+		controller : TestController
 	});
+	$routeProvider.when('/another', {
+		// Here we use the same html file as view, but you can
+		// do pretty much anything you want
+		templateUrl : 'views/test.html',
+		controller : AnotherController
+	});
+	// You can a a default one (but doesn't seems to work :P)
+	$routeProvider.otherwise('/test');
 } ]);
-function UserController($scope, User) {
-	$scope.message = "users";
+function TestController($scope) {
+	$scope.avar = "test";
 }
+function AnotherController($scope) {
+	$scope.avar = "another";
+}
+/*
+// The following is not needed
 angular.element(document).ready(function() {
 	angular.bootstrap(document, [ 'zenitApp' ]);
 });
+*/

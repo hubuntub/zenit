@@ -12,18 +12,31 @@
 
 </head>
 <body ng-app="zenitApp" ng-controller="userController">
-<table>
+
+
+<!--
+Example with multiple controller (inside each others) and
+even a view with some routes (defined in application.js)
+-->
+<h1>{{ message }}</h1>
+<table ng-controller="userController">
 
 	<thead>
-		<tr><th colspan="3">Users</th></tr>
+		<tr><th colspan="3">{{ name }}</th></tr>
 	</thead>
 	<tbody>
-		<tr ng-repeat="user in users">	
-		<td>{{$index + }}</td>
+		<tr ng-repeat="user in users">
+        <!-- Syntax error below -->
+		<!--<td>{{$index + }}</td>-->
 		<td>{{user.username}}&nbsp;{{user.lastname}}</td>
 		<td>{{user.dateOfBirth}}</td>
 		</tr>
 	</tbody>
 </table>
+<ul>
+    <li><a href="/#/test">Test view</a></li>
+    <li><a href="/#/another">Test view</a></li>
+</ul>
+<div ng-view></div>
 </body>
 </html>
