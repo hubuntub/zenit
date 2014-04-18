@@ -18,7 +18,6 @@ import com.github.hubuntub.zenit.service.UserService;
 @Controller
 public class UserController{
 
-
 	@Autowired
 	private UserService userService;
 	
